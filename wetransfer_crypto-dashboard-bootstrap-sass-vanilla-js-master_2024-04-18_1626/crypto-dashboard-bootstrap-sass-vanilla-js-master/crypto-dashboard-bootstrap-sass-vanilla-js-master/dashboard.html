@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+  </head>
+  <body>
+
+    <!-- Header -->
+    <div class="container-fluid bg-primary py-2">
+      <header class="container py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-6 d-flex align-items-center mb-2 mb-md-0">
+            <a class="d-flex align-items-center mb-2 mb-md-0 h4 text-white text-decoration-none text-uppercase" href="dashboard.html">
+              Crypto Dashboard
+            </a>
+          </div>
+          <div class="col-6 d-flex align-items-center justify-content-end">
+
+            <a href="Index.html">
+              <span class="material-icons-outlined me-2 text-white">Sair</span>
+            </a>
+           
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <div  class="container-fluid bg-dark py-1">
+      <div class="container nav-scroller mt-2 mb-2">
+        <nav class="nav d-flex justify-content-between">
+          <div class="row">
+            <div class="col-12">
+              <div class="text-white mt-3 ms-2">
+                <span class="text-secondary">Today:</span>
+                <span id="date"></span>
+              </div>
+            </div>
+          </div>
+        
+        </nav>
+      </div>
+    </div>
+    <!-- End Header -->
+
+    <!-- Today's date -->
+    
+    <!-- End Today's date -->
+    
+    <!-- Main -->
+    <main class="container py-3">
+
+      
+
+      <!-- Table -->
+      <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card bg-dark p-4 mb-4">
+                    <div class="card-body">
+                        <div id="users" class="table-responsive">
+                            <table class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>User1</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="editUser()">Editar</button>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="alert('Utilizador eliminado')">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>User2</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="editUser()">Editar</button>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="alert('Utilizador eliminado')">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    <!-- Adicione mais linhas conforme necessário para mais usuários -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para editar usuário -->
+    <div class="modal" id="editUserModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Usuário</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Aqui você pode adicionar os campos para editar os dados do usuário -->
+                    <div class="form-group">
+                        <label for="editUsername">Novo nome de usuário:</label>
+                        <input type="text" class="form-control" id="editUsername">
+                    </div>
+                    <!-- Adicione mais campos conforme necessário -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" href="dashboard.html">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="saveUserChanges()">Salvar Alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Adicione os scripts do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    
+    <script>
+        // Função para abrir o modal de edição de usuário
+        function editUser() {
+            $('#editUserModal').modal('show');
+        }
+    
+        // Função para salvar as alterações do usuário
+        function saveUserChanges() {
+            // Aqui você pode implementar a lógica para salvar as alterações do usuário
+            // Por exemplo, você pode obter os novos valores dos campos do modal e enviá-los para o servidor via AJAX
+            // Após salvar as alterações, você pode fechar o modal
+            $('#editUserModal').modal('hide');
+            alert('Alterações salvas com sucesso!');
+        }
+    </script>
+    
+      <!-- End Table -->
+    
+    </main>
+    <!-- End Main -->
+
+    <!-- Footer -->
+    <footer class="text-center text-secondary py-4">
+      
+    </footer>
+    <!-- End Footer -->
+    
+    <!-- Scripts -->
+
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.37.0/apexcharts.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
+
+  </body>
+</html>
